@@ -93,14 +93,24 @@ function initProfilePage() {
   const user = getCurrentUser();
   const stats = getUserStats(user.email);
 
+  const rank = getUserRank(user.email);
+  const memberDate = user.createdAt
+    ? new Date(user.createdAt).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' })
+    : 'Recently';
+
   document.getElementById('profileName').textContent = user.fullName;
   document.getElementById('profileEmail').textContent = user.email;
   document.getElementById('profileTests').textContent = stats.testsAttempted;
   document.getElementById('profileAverage').textContent = `${stats.averageScore}%`;
+  document.getElementById('profileHighest').textContent = `${stats.highestScore}%`;
+  document.getElementById('profileRank').textContent = rank;
+  document.getElementById('profileMemberSince').textContent = `Member since ${memberDate}`;
   document.getElementById('profileAvatar').src = 'images/user-avatar.png';
 
   document.getElementById('editFullName').value = user.fullName;
   document.getElementById('editEmail').value = user.email;
+  document.getElementById('editPassword').value = '';
+  document.getElementById('editConfirmPassword').value = '';
 
   const profileForm = document.getElementById('profileForm');
   profileForm.removeEventListener('submit', handleProfileUpdate);

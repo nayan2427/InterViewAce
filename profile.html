@@ -27,67 +27,139 @@
       </div>
     </aside>
 
-    <main class="main-content">
-      <header class="page-header">
-        <div>
-          <h1>My Profile</h1>
-          <p>View and edit your account details</p>
-        </div>
-      </header>
-
-      <div class="profile-layout">
-        <!-- Profile Info Sidebar -->
-        <aside class="profile-sidebar">
-          <img id="profileAvatar" src="images/user-avatar.png" alt="Profile" class="profile-avatar">
-          <h2 id="profileName" class="profile-name">User Name</h2>
-          <p id="profileEmail" class="profile-email">user@email.com</p>
-
-          <div class="profile-stats-mini">
-            <div class="profile-stat-mini">
-              <div id="profileTests" class="value">0</div>
-              <div class="label">Tests Attempted</div>
+    <main class="main-content profile-page">
+      <!-- Profile Hero Card -->
+      <section class="profile-hero">
+        <div class="profile-cover"></div>
+        <div class="profile-hero-body">
+          <div class="profile-identity">
+            <div class="profile-avatar-wrap">
+              <img id="profileAvatar" src="images/user-avatar.png" alt="Profile" class="profile-avatar">
+              <span class="profile-status-dot" title="Active"></span>
             </div>
-            <div class="profile-stat-mini">
-              <div id="profileAverage" class="value">0%</div>
-              <div class="label">Average Score</div>
+            <div class="profile-identity-info">
+              <h1 id="profileName" class="profile-name">User Name</h1>
+              <p id="profileEmail" class="profile-email">user@email.com</p>
+              <span id="profileMemberSince" class="profile-badge">Member since —</span>
             </div>
           </div>
-        </aside>
+          <div class="profile-hero-actions">
+            <a href="mcq.html" class="btn btn-primary btn-sm">Take Test</a>
+            <a href="dashboard.html" class="btn btn-outline btn-sm">Dashboard</a>
+          </div>
+        </div>
+      </section>
 
-        <!-- Edit Profile Form -->
-        <section class="profile-form-card">
-          <h2>Edit Profile</h2>
+      <!-- Stats Row -->
+      <section class="profile-stats-row">
+        <article class="profile-stat-card">
+          <span class="profile-stat-icon">📋</span>
+          <div>
+            <div id="profileTests" class="profile-stat-value">0</div>
+            <div class="profile-stat-label">Tests Attempted</div>
+          </div>
+        </article>
+        <article class="profile-stat-card">
+          <span class="profile-stat-icon">📈</span>
+          <div>
+            <div id="profileAverage" class="profile-stat-value">0%</div>
+            <div class="profile-stat-label">Average Score</div>
+          </div>
+        </article>
+        <article class="profile-stat-card">
+          <span class="profile-stat-icon">⭐</span>
+          <div>
+            <div id="profileHighest" class="profile-stat-value">0%</div>
+            <div class="profile-stat-label">Highest Score</div>
+          </div>
+        </article>
+        <article class="profile-stat-card">
+          <span class="profile-stat-icon">🏅</span>
+          <div>
+            <div id="profileRank" class="profile-stat-value">-</div>
+            <div class="profile-stat-label">Leaderboard Rank</div>
+          </div>
+        </article>
+      </section>
 
-          <div id="profileMessage" class="form-message"></div>
+      <!-- Edit Profile Form -->
+      <section class="profile-form-card">
+        <div class="profile-form-header">
+          <div>
+            <h2>Account Settings</h2>
+            <p>Update your personal information and password</p>
+          </div>
+        </div>
 
-          <form id="profileForm">
-            <div class="form-group">
-              <label for="editFullName">Full Name</label>
-              <input type="text" id="editFullName" required>
-              <span id="editNameError" class="error-text"></span>
+        <div id="profileMessage" class="form-message"></div>
+
+        <form id="profileForm" class="profile-form">
+          <div class="settings-block">
+            <div class="settings-block-header">
+              <div class="settings-block-icon personal">👤</div>
+              <div>
+                <h3>Personal Information</h3>
+                <p>Your basic account details</p>
+              </div>
             </div>
-
-            <div class="form-group">
-              <label for="editEmail">Email Address</label>
-              <input type="email" id="editEmail" required>
-              <span id="editEmailError" class="error-text"></span>
+            <div class="profile-form-grid">
+              <div class="profile-field">
+                <label for="editFullName">Full Name</label>
+                <div class="input-wrap">
+                  <span class="input-icon" aria-hidden="true">✏️</span>
+                  <input type="text" id="editFullName" placeholder="Your full name" required>
+                </div>
+                <span id="editNameError" class="error-text"></span>
+              </div>
+              <div class="profile-field">
+                <label for="editEmail">Email Address</label>
+                <div class="input-wrap">
+                  <span class="input-icon" aria-hidden="true">✉️</span>
+                  <input type="email" id="editEmail" placeholder="you@example.com" required>
+                </div>
+                <span id="editEmailError" class="error-text"></span>
+              </div>
             </div>
+          </div>
 
-            <div class="form-group">
-              <label for="editPassword">New Password (optional)</label>
-              <input type="password" id="editPassword" placeholder="Leave blank to keep current">
-              <span id="editPasswordError" class="error-text"></span>
+          <div class="settings-block">
+            <div class="settings-block-header">
+              <div class="settings-block-icon security">🔒</div>
+              <div>
+                <h3>Security</h3>
+                <p>Change your password</p>
+              </div>
             </div>
-
-            <div class="form-group">
-              <label for="editConfirmPassword">Confirm New Password</label>
-              <input type="password" id="editConfirmPassword" placeholder="Confirm new password">
+            <div class="settings-info-box">
+              Leave password fields empty if you don't want to change your current password.
             </div>
+            <div class="profile-form-grid">
+              <div class="profile-field">
+                <label for="editPassword">New Password</label>
+                <div class="input-wrap">
+                  <span class="input-icon" aria-hidden="true">🔑</span>
+                  <input type="password" id="editPassword" placeholder="Minimum 6 characters">
+                  <button type="button" class="toggle-pw" data-target="editPassword" aria-label="Show password">👁</button>
+                </div>
+                <span id="editPasswordError" class="error-text"></span>
+              </div>
+              <div class="profile-field">
+                <label for="editConfirmPassword">Confirm Password</label>
+                <div class="input-wrap">
+                  <span class="input-icon" aria-hidden="true">🔑</span>
+                  <input type="password" id="editConfirmPassword" placeholder="Re-enter new password">
+                  <button type="button" class="toggle-pw" data-target="editConfirmPassword" aria-label="Show password">👁</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <div class="profile-form-actions">
+            <button type="reset" class="btn btn-outline" id="resetProfileBtn">Discard Changes</button>
             <button type="submit" class="btn btn-primary">Save Changes</button>
-          </form>
-        </section>
-      </div>
+          </div>
+        </form>
+      </section>
     </main>
   </div>
 
@@ -98,6 +170,20 @@
   <script>
     document.getElementById('sidebarToggle').addEventListener('click', () => {
       document.getElementById('sidebar').classList.toggle('open');
+    });
+
+    document.getElementById('resetProfileBtn').addEventListener('click', () => {
+      if (typeof initProfilePage === 'function') initProfilePage();
+    });
+
+    document.querySelectorAll('.toggle-pw').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const input = document.getElementById(btn.dataset.target);
+        const isPassword = input.type === 'password';
+        input.type = isPassword ? 'text' : 'password';
+        btn.textContent = isPassword ? '🙈' : '👁';
+        btn.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+      });
     });
   </script>
 </body>
