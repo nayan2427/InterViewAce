@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Test - InterviewAce</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body data-page="mcq">
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img src="images/logo.png" alt="InterviewAce">
+        <span>InterviewAce</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+        <a href="mcq.html" class="active"><span class="nav-icon">📝</span> MCQ Test</a>
+        <a href="notes.html"><span class="nav-icon">📒</span> Notes</a>
+        <a href="leaderboard.html"><span class="nav-icon">🏆</span> Leaderboard</a>
+        <a href="profile.html"><span class="nav-icon">👤</span> Profile</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="dark-mode-toggle btn btn-outline" style="width:100%">🌙 Dark</button>
+        <button id="logoutBtn" class="btn btn-danger" style="width:100%">Logout</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header">
+        <div>
+          <h1>MCQ Practice Test</h1>
+          <p>50 questions · 30 minutes · 6 categories</p>
+        </div>
+        <div class="header-actions">
+          <div id="timer" class="quiz-timer" aria-live="polite">30:00</div>
+        </div>
+      </header>
+
+      <div class="quiz-layout">
+        <!-- Question Area -->
+        <section class="quiz-main" id="questionContainer">
+          <div class="quiz-progress">
+            <div class="progress-bar">
+              <div id="progressFill" class="progress-fill"></div>
+            </div>
+            <span id="progressText" class="progress-text">0/50 answered</span>
+          </div>
+
+          <p id="questionNumber" class="stat-label">Question 1 of 50</p>
+          <span id="questionCategory" class="question-category">Java</span>
+          <h2 id="questionText" class="question-text">Loading question...</h2>
+
+          <div id="optionsList" class="options-list">
+            <!-- Options rendered by JS -->
+          </div>
+
+          <div class="quiz-actions">
+            <button id="prevBtn" class="btn btn-outline">← Previous</button>
+            <div>
+              <button id="nextBtn" class="btn btn-primary">Next →</button>
+              <button id="submitBtn" class="btn btn-primary" style="display:none;">Submit Test</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Question Navigator -->
+        <aside class="quiz-sidebar">
+          <h3>Question Navigator</h3>
+          <div id="questionNav" class="question-nav">
+            <!-- Nav buttons rendered by JS -->
+          </div>
+          <div class="nav-legend">
+            <div class="legend-item">
+              <span class="legend-dot"></span> Unanswered
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot answered"></span> Answered
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot current"></span> Current
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+
+  <script src="js/auth.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/quiz.js"></script>
+  <script>
+    document.getElementById('sidebarToggle').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

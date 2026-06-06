@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - InterviewAce</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body data-page="dashboard">
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img src="images/logo.png" alt="InterviewAce">
+        <span>InterviewAce</span>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Dashboard navigation">
+        <a href="dashboard.html" class="active">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="mcq.html">
+          <span class="nav-icon">📝</span> MCQ Test
+        </a>
+        <a href="notes.html">
+          <span class="nav-icon">📒</span> Notes
+        </a>
+        <a href="leaderboard.html">
+          <span class="nav-icon">🏆</span> Leaderboard
+        </a>
+        <a href="profile.html">
+          <span class="nav-icon">👤</span> Profile
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="dark-mode-toggle btn btn-outline" style="width:100%">🌙 Dark</button>
+        <button id="logoutBtn" class="btn btn-danger" style="width:100%">Logout</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="page-header">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Track your interview preparation progress</p>
+        </div>
+        <div class="header-actions">
+          <a href="mcq.html" class="btn btn-primary">Start New Test</a>
+        </div>
+      </header>
+
+      <!-- Stats Cards -->
+      <section class="stats-grid-dashboard">
+        <article class="stat-card welcome-card">
+          <img id="userAvatar" src="images/user-avatar.png" alt="User avatar" class="welcome-avatar">
+          <div>
+            <p class="stat-label">Welcome back,</p>
+            <h2 id="welcomeName">Student</h2>
+          </div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-icon">📋</div>
+          <div class="stat-value" id="testsAttempted">0</div>
+          <div class="stat-label">Tests Attempted</div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div class="stat-value" id="averageScore">0%</div>
+          <div class="stat-label">Average Score</div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-value" id="highestScore">0%</div>
+          <div class="stat-label">Highest Score</div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-icon">🏅</div>
+          <div class="stat-value" id="currentRank">-</div>
+          <div class="stat-label">Current Rank</div>
+        </article>
+      </section>
+
+      <!-- Dashboard Grid -->
+      <section class="dashboard-grid">
+        <article class="card">
+          <div class="card-header">
+            <h2>Quick Actions</h2>
+          </div>
+          <div class="card-body">
+            <div class="quick-actions">
+              <a href="mcq.html" class="action-card">
+                <span class="action-icon">🎯</span>
+                <span>Take MCQ Test</span>
+              </a>
+              <a href="notes.html" class="action-card">
+                <span class="action-icon">✏️</span>
+                <span>Manage Notes</span>
+              </a>
+              <a href="leaderboard.html" class="action-card">
+                <span class="action-icon">🏆</span>
+                <span>View Leaderboard</span>
+              </a>
+              <a href="profile.html" class="action-card">
+                <span class="action-icon">⚙️</span>
+                <span>Edit Profile</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h2>Recent Activity</h2>
+          </div>
+          <div class="card-body" id="recentActivity">
+            <!-- Populated by JS -->
+          </div>
+        </article>
+      </section>
+
+      <!-- Analytics Section -->
+      <section style="margin-top: 2rem;">
+        <header class="page-header">
+          <div>
+            <h2>Performance Analytics</h2>
+            <p>Visualize your progress and identify weak areas</p>
+          </div>
+        </header>
+
+        <div id="analyticsEmpty" class="analytics-empty">
+          <p>Complete at least one test to view analytics charts.</p>
+          <a href="mcq.html" class="btn btn-primary">Take Your First Test</a>
+        </div>
+
+        <div id="chartsContainer" class="charts-container" style="display:none;">
+          <article class="chart-card full-width">
+            <div class="chart-wrapper">
+              <canvas id="scoreTrendChart"></canvas>
+            </div>
+          </article>
+          <article class="chart-card">
+            <div class="chart-wrapper">
+              <canvas id="categoryChart"></canvas>
+            </div>
+          </article>
+          <article class="chart-card">
+            <div class="chart-wrapper">
+              <canvas id="progressChart"></canvas>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/analytics.js"></script>
+  <script>
+    document.getElementById('sidebarToggle').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

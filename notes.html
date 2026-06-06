@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes - InterviewAce</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body data-page="notes">
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img src="images/logo.png" alt="InterviewAce">
+        <span>InterviewAce</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+        <a href="mcq.html"><span class="nav-icon">📝</span> MCQ Test</a>
+        <a href="notes.html" class="active"><span class="nav-icon">📒</span> Notes</a>
+        <a href="leaderboard.html"><span class="nav-icon">🏆</span> Leaderboard</a>
+        <a href="profile.html"><span class="nav-icon">👤</span> Profile</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="dark-mode-toggle btn btn-outline" style="width:100%">🌙 Dark</button>
+        <button id="logoutBtn" class="btn btn-danger" style="width:100%">Logout</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="notes-header">
+        <div>
+          <h1>My Notes</h1>
+          <p id="notesCount">0 notes</p>
+        </div>
+        <button id="addNoteBtn" class="btn btn-primary">+ Add Note</button>
+      </header>
+
+      <section id="notesGrid" class="notes-grid">
+        <!-- Notes rendered by JS -->
+      </section>
+    </main>
+  </div>
+
+  <!-- Note Modal -->
+  <div id="noteModal" class="modal-overlay">
+    <div class="modal" role="dialog" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <h2 id="modalTitle">Add Note</h2>
+        <button id="closeModal" class="modal-close" aria-label="Close">&times;</button>
+      </div>
+
+      <div id="noteFormMessage" class="form-message"></div>
+
+      <form id="noteForm">
+        <input type="hidden" id="noteId">
+        <div class="form-group">
+          <label for="noteTitle">Title</label>
+          <input type="text" id="noteTitle" placeholder="Note title" required>
+        </div>
+        <div class="form-group">
+          <label for="noteContent">Content</label>
+          <textarea id="noteContent" rows="6" placeholder="Write your note here..." required style="width:100%;padding:0.85rem 1rem;border:2px solid var(--border);border-radius:var(--radius-sm);font-family:inherit;font-size:1rem;background:var(--bg);color:var(--text);resize:vertical;"></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" id="cancelModal" class="btn btn-outline">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Note</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+
+  <script src="js/auth.js"></script>
+  <script src="js/notes.js"></script>
+  <script>
+    document.getElementById('sidebarToggle').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

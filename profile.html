@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - InterviewAce</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body data-page="profile">
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img src="images/logo.png" alt="InterviewAce">
+        <span>InterviewAce</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+        <a href="mcq.html"><span class="nav-icon">📝</span> MCQ Test</a>
+        <a href="notes.html"><span class="nav-icon">📒</span> Notes</a>
+        <a href="leaderboard.html"><span class="nav-icon">🏆</span> Leaderboard</a>
+        <a href="profile.html" class="active"><span class="nav-icon">👤</span> Profile</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="dark-mode-toggle btn btn-outline" style="width:100%">🌙 Dark</button>
+        <button id="logoutBtn" class="btn btn-danger" style="width:100%">Logout</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header">
+        <div>
+          <h1>My Profile</h1>
+          <p>View and edit your account details</p>
+        </div>
+      </header>
+
+      <div class="profile-layout">
+        <!-- Profile Info Sidebar -->
+        <aside class="profile-sidebar">
+          <img id="profileAvatar" src="images/user-avatar.png" alt="Profile" class="profile-avatar">
+          <h2 id="profileName" class="profile-name">User Name</h2>
+          <p id="profileEmail" class="profile-email">user@email.com</p>
+
+          <div class="profile-stats-mini">
+            <div class="profile-stat-mini">
+              <div id="profileTests" class="value">0</div>
+              <div class="label">Tests Attempted</div>
+            </div>
+            <div class="profile-stat-mini">
+              <div id="profileAverage" class="value">0%</div>
+              <div class="label">Average Score</div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Edit Profile Form -->
+        <section class="profile-form-card">
+          <h2>Edit Profile</h2>
+
+          <div id="profileMessage" class="form-message"></div>
+
+          <form id="profileForm">
+            <div class="form-group">
+              <label for="editFullName">Full Name</label>
+              <input type="text" id="editFullName" required>
+              <span id="editNameError" class="error-text"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="editEmail">Email Address</label>
+              <input type="email" id="editEmail" required>
+              <span id="editEmailError" class="error-text"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="editPassword">New Password (optional)</label>
+              <input type="password" id="editPassword" placeholder="Leave blank to keep current">
+              <span id="editPasswordError" class="error-text"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="editConfirmPassword">Confirm New Password</label>
+              <input type="password" id="editConfirmPassword" placeholder="Confirm new password">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </form>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script>
+    document.getElementById('sidebarToggle').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
