@@ -9,7 +9,7 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar" aria-label="Main navigation">
+  <nav class="navbar" aria-label="Primary Navigation">
     <div class="container">
       <a href="index.html" class="nav-brand">
         <img src="images/logo.png" alt="InterviewAce Logo">
@@ -38,18 +38,278 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Ace Your Next Interview</h1>
-        <p>Practice 50+ curated MCQ questions across Java, DBMS, SQL, OS, Networks & Aptitude. Track progress, save notes, and climb the leaderboard.</p>
-        <div class="hero-actions">
-          <a href="signup.html" class="btn btn-primary btn-lg">Start Learning</a>
-          <a href="login.html" class="btn btn-secondary btn-lg">Login</a>
+  <section id="home" class="hero" aria-labelledby="hero-heading">
+    <!-- Premium Layered Background -->
+    <div class="hero-bg-glows" aria-hidden="true">
+      <div class="glow-blob glow-1"></div>
+      <div class="glow-blob glow-2"></div>
+      <div class="glow-blob glow-3"></div>
+    </div>
+    <div class="hero-bg-grid" aria-hidden="true">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+    </div>
+    <div class="hero-bg-noise" aria-hidden="true">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <filter id="noiseFilter">
+          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+      </svg>
+    </div>
+    <div class="hero-cursor-glow" aria-hidden="true"></div>
+
+    <div class="container hero-container">
+      <!-- Left Column: Content & Actions -->
+      <div class="hero-left reveal-element reveal-fade-up">
+        <!-- Premium Badge -->
+        <div class="hero-badge reveal-item">
+          <span class="badge-icon">🚀</span>
+          <span class="badge-text">Smart Interview Preparation Platform</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 id="hero-heading" class="hero-title reveal-item">
+          Master <span class="text-gradient">Technical Interviews</span> With <span class="text-gradient">Confidence</span>
+        </h1>
+
+        <!-- Supporting Copy -->
+        <p class="hero-subtitle reveal-item">
+          Practice technical questions, track progress, manage notes, and prepare smarter with a structured interview learning platform.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-actions-new reveal-item">
+          <a href="signup.html" class="btn-premium btn-premium-primary" aria-label="Start Practicing Quizzes">
+            <span class="btn-glow"></span>
+            <span class="btn-text">Start Practicing</span>
+          </a>
+          <a href="#features" class="btn-premium btn-premium-secondary" aria-label="Explore Platform Features">
+            <span class="btn-border-glow"></span>
+            <span class="btn-text">Explore Features</span>
+          </a>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="hero-trust reveal-item" aria-label="Trust indicators">
+          <div class="trust-chip"><span class="check-icon">✓</span> 500+ Interview Questions</div>
+          <div class="trust-chip"><span class="check-icon">✓</span> Track Learning Progress</div>
+          <div class="trust-chip"><span class="check-icon">✓</span> Organized Notes System</div>
+          <div class="trust-chip"><span class="check-icon">✓</span> Placement-Focused Preparation</div>
         </div>
       </div>
-      <div class="hero-image">
-        <img src="images/hero-banner.jpg" alt="Students preparing for interviews">
+
+      <!-- Right Column: Interactive Dashboard Mockup -->
+      <div class="hero-right reveal-element reveal-scale-in">
+        <div class="dashboard-tilt-container">
+          <!-- Premium Dashboard Mockup -->
+          <div class="dashboard-mockup" role="img" aria-label="Preview mockup of the InterviewAce dashboard interface">
+
+            <!-- Window Header -->
+            <div class="mockup-header">
+              <div class="mockup-dots">
+                <span class="mockup-dot dot-close"></span>
+                <span class="mockup-dot dot-minimize"></span>
+                <span class="mockup-dot dot-maximize"></span>
+              </div>
+              <div class="mockup-address">
+                <span class="address-lock">🔒</span>
+                <span class="address-text">interviewace.com/dashboard</span>
+              </div>
+            </div>
+
+            <!-- Viewport Content -->
+            <div class="mockup-viewport">
+              <!-- Sidebar -->
+              <aside class="mockup-sidebar">
+                <div class="sidebar-logo">ACE</div>
+                <div class="sidebar-menu">
+                  <div class="menu-item active" aria-hidden="true">📊 <span>Dashboard</span></div>
+                  <div class="menu-item" aria-hidden="true">📝 <span>Practice</span></div>
+                  <div class="menu-item" aria-hidden="true">🏆 <span>Rankings</span></div>
+                  <div class="menu-item" aria-hidden="true">📒 <span>Notes</span></div>
+                </div>
+              </aside>
+
+              <!-- Main Dashboard Area -->
+              <div class="mockup-dashboard-content">
+                <div class="dashboard-header-row">
+                  <h3>Dashboard</h3>
+                  <span class="date-badge">June 2026</span>
+                </div>
+
+                <!-- Cards Grid -->
+                <div class="dashboard-grid">
+                  <!-- Card 1: Progress Score Card -->
+                  <div class="dashboard-card progress-card">
+                    <div class="card-header-mini">
+                      <span class="card-title">Progress Score</span>
+                    </div>
+                    <div class="progress-details">
+                      <div class="circular-progress" aria-label="Progress is 78%">
+                        <svg viewBox="0 0 36 36" class="circular-chart">
+                          <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                          <path class="circle-fill" stroke-dasharray="78, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                          <text x="18" y="20.35" class="circle-percentage">78%</text>
+                        </svg>
+                      </div>
+                      <div class="sparkline-container" aria-hidden="true">
+                        <svg class="sparkline" viewBox="0 0 100 30">
+                          <path d="M0,25 Q15,5 30,18 T60,5 T90,20 L100,10" fill="none" stroke-width="2" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 2: Weekly Activity Card -->
+                  <div class="dashboard-card activity-card">
+                    <div class="card-header-mini">
+                      <span class="card-title">Weekly Activity</span>
+                    </div>
+                    <div class="activity-bars" aria-label="Weekly performance bar chart">
+                      <div class="bar-col"><div class="bar-val" style="height: 40%"></div><span class="bar-label">M</span></div>
+                      <div class="bar-col"><div class="bar-val" style="height: 65%"></div><span class="bar-label">T</span></div>
+                      <div class="bar-col"><div class="bar-val" style="height: 50%"></div><span class="bar-label">W</span></div>
+                      <div class="bar-col"><div class="bar-val" style="height: 85%"></div><span class="bar-label">T</span></div>
+                      <div class="bar-col"><div class="bar-val" style="height: 70%"></div><span class="bar-label">F</span></div>
+                      <div class="bar-col"><div class="bar-val" style="height: 95%"></div><span class="bar-label">S</span></div>
+                      <div class="bar-col"><div class="bar-val" style="height: 60%"></div><span class="bar-label">S</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Card 3: Subject Progress Card -->
+                  <div class="dashboard-card subjects-card">
+                    <div class="card-header-mini">
+                      <span class="card-title">Subject Progress</span>
+                    </div>
+                    <div class="subjects-progress" aria-label="Subject progress bars">
+                      <div class="subject-row">
+                        <div class="subject-meta"><span>Java</span><span>85%</span></div>
+                        <div class="progress-bar"><div class="progress-fill"></div></div>
+                      </div>
+                      <div class="subject-row">
+                        <div class="subject-meta"><span>DBMS</span><span>70%</span></div>
+                        <div class="progress-bar"><div class="progress-fill"></div></div>
+                      </div>
+                      <div class="subject-row">
+                        <div class="subject-meta"><span>OS</span><span>88%</span></div>
+                        <div class="progress-bar"><div class="progress-fill"></div></div>
+                      </div>
+                      <div class="subject-row">
+                        <div class="subject-meta"><span>CN</span><span>65%</span></div>
+                        <div class="progress-bar"><div class="progress-fill"></div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 4: Quiz Statistics -->
+                  <div class="dashboard-card stats-card">
+                    <div class="card-header-mini">
+                      <span class="card-title">Quiz Stats</span>
+                    </div>
+                    <div class="stats-mini-grid">
+                      <div class="stat-mini-box">
+                        <span class="stat-num">247</span>
+                        <span class="stat-lbl">Solved</span>
+                      </div>
+                      <div class="stat-mini-box">
+                        <span class="stat-num color-success">92%</span>
+                        <span class="stat-lbl">Accuracy</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 5: Achievement Section -->
+                  <div class="dashboard-card achievement-card">
+                    <div class="card-header-mini">
+                      <span class="card-title">Recent Achievement</span>
+                    </div>
+                    <div class="achievement-content">
+                      <span class="badge-emoji" role="img" aria-label="Trophy Medal">🏅</span>
+                      <div class="achievement-details">
+                        <span class="badge-title">Java Master Badge</span>
+                        <span class="badge-desc">Completed 50+ MCQs</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 6: Notes Summary Card -->
+                  <div class="dashboard-card notes-card">
+                    <div class="card-header-mini">
+                      <span class="card-title">Notes Summary</span>
+                    </div>
+                    <div class="notes-content">
+                      <span class="notes-icon" role="img" aria-label="Notebook">📒</span>
+                      <div class="notes-details">
+                        <span class="notes-count">12 Notes Saved</span>
+                        <span class="notes-status">Quick Revision Active</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 7: Leaderboard -->
+                  <div class="dashboard-card leaderboard-card">
+                    <div class="card-header-mini">
+                      <span class="card-title">Leaderboard</span>
+                    </div>
+                    <div class="leaderboard-mini-list">
+                      <div class="leaderboard-row">
+                        <span class="rank rank-1">1</span>
+                        <span class="name">Rahul</span>
+                        <span class="score">96%</span>
+                      </div>
+                      <div class="leaderboard-row">
+                        <span class="rank rank-2">2</span>
+                        <span class="name">Priya</span>
+                        <span class="score">94%</span>
+                      </div>
+                      <div class="leaderboard-row">
+                        <span class="rank rank-3">3</span>
+                        <span class="name">Aman</span>
+                        <span class="score">91%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Cards (decorative — info duplicated in dashboard) -->
+          <div class="floating-card float-streak" aria-hidden="true" style="--float-delay: 0.5s; --float-y: -40px;">
+            <span class="float-emoji">🔥</span>
+            <div class="float-content">
+              <span class="float-title">15 Day Streak</span>
+            </div>
+          </div>
+
+          <div class="floating-card float-rank" aria-hidden="true" style="--float-delay: 1.8s; --float-y: 20px;">
+            <span class="float-emoji">🏆</span>
+            <div class="float-content">
+              <span class="float-title">Rank #12</span>
+            </div>
+          </div>
+
+          <div class="floating-card float-progress" aria-hidden="true" style="--float-delay: 3s; --float-y: -60px;">
+            <span class="float-emoji">📈</span>
+            <div class="float-content">
+              <span class="float-title">+24% Improvement</span>
+            </div>
+          </div>
+
+          <div class="floating-card float-complete" aria-hidden="true" style="--float-delay: 4.2s; --float-y: 50px;">
+            <span class="float-emoji">✅</span>
+            <div class="float-content">
+              <span class="float-title">Java Quiz Completed</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -145,6 +405,7 @@
     </div>
   </footer>
 
+  <script src="js/hero.js"></script>
   <script src="js/auth.js"></script>
 </body>
 </html>
