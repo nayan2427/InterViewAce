@@ -11,7 +11,10 @@
   <div class="app-layout">
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
-        <img src="images/logo.png" alt="InterviewAce">
+        <picture>
+          <source srcset="images/logo.webp 1x, images/logo-2x.webp 2x" type="image/webp">
+          <img src="images/logo.png" alt="InterviewAce" width="36" height="24">
+        </picture>
         <span>InterviewAce</span>
       </div>
       <nav class="sidebar-nav">
@@ -34,7 +37,10 @@
         <div class="profile-hero-body">
           <div class="profile-identity">
             <div class="profile-avatar-wrap">
-              <img id="profileAvatar" src="images/user-avatar.png" alt="Profile" class="profile-avatar">
+              <picture>
+                <source srcset="images/user-avatar.webp 1x, images/user-avatar-2x.webp 2x" type="image/webp">
+                <img id="profileAvatar" src="images/user-avatar.png" alt="Profile" class="profile-avatar" width="110" height="73">
+              </picture>
               <span class="profile-status-dot" title="Active"></span>
             </div>
             <div class="profile-identity-info">

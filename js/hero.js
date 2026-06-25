@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   coarsePointerQuery.addEventListener('change', computeEffectsEnabled);
 
   /* ---------------------------------------------------------------------
-   * 3. Cached bounding rects — recomputed only when needed
+   * 3. Cached bounding rects — measured lazily on pointer interaction
    * ------------------------------------------------------------------- */
   let heroRect = null;
   let tiltRect = null;
@@ -70,11 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
     tiltRect = tiltContainer ? tiltContainer.getBoundingClientRect() : null;
   };
 
-  // Debounced resize: recompute cached measurements only after resize settles.
+  // On resize, we simply invalidate cached rects to force a lazy re-measure
+  // on next pointer interaction. This prevents forced reflows on resize.
   let resizeTimer = null;
   const onResize = () => {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(measure, 180); // within the 150–200ms target window
+    resizeTimer = setTimeout(() => {
+      heroRect = null;
+      tiltRect = null;
+    }, 180);
   };
   window.addEventListener('resize', onResize, { passive: true });
 
@@ -111,6 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const onMouseMove = (e) => {
     if (!effectsEnabled) return;
+    // Measure lazily on first pointer move to avoid layout thrashing on page load
+    if (heroRect === null || tiltRect === null) {
+      measure();
+    }
     pendingClientX = e.clientX;
     pendingClientY = e.clientY;
     if (rafId === null) {
@@ -134,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const attachPointerListeners = () => {
     if (listenersAttached || !effectsEnabled) return;
-    measure(); // fresh rects right as we start
     heroSection.addEventListener('mousemove', onMouseMove, { passive: true });
     heroSection.addEventListener('mouseleave', onMouseLeave, { passive: true });
     listenersAttached = true;
@@ -152,8 +159,10 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         attachPointerListeners();
+        document.documentElement.classList.add('hero-effects-active');
       } else {
         detachPointerListeners();
+        document.documentElement.classList.remove('hero-effects-active');
       }
     });
   }, { threshold: 0.1 });

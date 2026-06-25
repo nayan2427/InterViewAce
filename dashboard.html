@@ -12,7 +12,10 @@
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
-        <img src="images/logo.png" alt="InterviewAce">
+        <picture>
+          <source srcset="images/logo.webp 1x, images/logo-2x.webp 2x" type="image/webp">
+          <img src="images/logo.png" alt="InterviewAce" width="36" height="24">
+        </picture>
         <span>InterviewAce</span>
       </div>
 
@@ -55,7 +58,10 @@
       <!-- Stats Cards -->
       <section class="stats-grid-dashboard">
         <article class="stat-card welcome-card">
-          <img id="userAvatar" src="images/user-avatar.png" alt="User avatar" class="welcome-avatar">
+          <picture>
+            <source srcset="images/user-avatar.webp 1x, images/user-avatar-2x.webp 2x" type="image/webp">
+            <img id="userAvatar" src="images/user-avatar.png" alt="User avatar" class="welcome-avatar" width="64" height="43">
+          </picture>
           <div>
             <p class="stat-label">Welcome back,</p>
             <h2 id="welcomeName">Student</h2>

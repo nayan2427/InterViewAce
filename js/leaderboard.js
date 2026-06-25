@@ -48,7 +48,10 @@ function renderTopThree(rankings) {
   container.innerHTML = top.map((user, idx) => `
     <div class="podium-card rank-${idx + 1}">
       <div class="podium-medal">${medals[idx]}</div>
-      <img src="images/user-avatar.png" alt="${user.name}" class="podium-avatar">
+      <picture>
+        <source srcset="images/user-avatar.webp 1x, images/user-avatar-2x.webp 2x" type="image/webp">
+        <img src="images/user-avatar.png" alt="${user.name}" class="podium-avatar" width="64" height="43">
+      </picture>
       <h3 class="podium-name">${escapeHtml(user.name)}</h3>
       <p class="podium-score">${user.score}%</p>
       <span class="podium-rank">Rank #${idx + 1}</span>
@@ -77,7 +80,10 @@ function renderLeaderboard(rankings, currentEmail) {
         </td>
         <td>
           <div class="leader-name">
-            <img src="images/user-avatar.png" alt="" class="leader-avatar">
+            <picture>
+              <source srcset="images/user-avatar.webp 1x, images/user-avatar-2x.webp 2x" type="image/webp">
+              <img src="images/user-avatar.png" alt="" class="leader-avatar" width="36" height="24">
+            </picture>
             <span>${escapeHtml(user.name)}${isCurrent ? ' <em>(You)</em>' : ''}</span>
           </div>
         </td>
