@@ -1,8 +1,3 @@
-/* ============================================
-   InterviewAce - Global Styles
-   Modern EdTech Design System
-   ============================================ */
-
 :root {
   --primary: #4f46e5;
   --primary-dark: #4338ca;
@@ -34,7 +29,9 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -69,9 +66,10 @@ ul {
   list-style: none;
 }
 
-/* ==================== Typography ==================== */
-
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   line-height: 1.3;
   font-weight: 700;
 }
@@ -90,8 +88,6 @@ h1, h2, h3, h4 {
   margin-left: auto;
   margin-right: auto;
 }
-
-/* ==================== Buttons ==================== */
 
 .btn {
   display: inline-flex;
@@ -165,8 +161,6 @@ h1, h2, h3, h4 {
   cursor: not-allowed;
   transform: none !important;
 }
-
-/* ==================== Navbar ==================== */
 
 .navbar {
   position: fixed;
@@ -276,8 +270,6 @@ h1, h2, h3, h4 {
   border-color: var(--primary);
 }
 
-/* ==================== Hero Section ==================== */
-
 .hero {
   --hero-bg: #0b0f19;
   --hero-text: #f1f5f9;
@@ -289,7 +281,6 @@ h1, h2, h3, h4 {
   --hero-glow-2: rgba(6, 182, 212, 0.15);
   --hero-glow-3: rgba(147, 51, 234, 0.15);
   --hero-grid-color: rgba(255, 255, 255, 0.04);
-
   color: var(--hero-text);
   background-color: var(--hero-bg);
   position: relative;
@@ -312,7 +303,6 @@ h1, h2, h3, h4 {
   --hero-grid-color: rgba(0, 0, 0, 0.03);
 }
 
-/* Background Systems & Glows */
 .hero-bg-glows {
   position: absolute;
   inset: 0;
@@ -320,6 +310,7 @@ h1, h2, h3, h4 {
   z-index: 1;
   pointer-events: none;
 }
+
 .glow-blob {
   position: absolute;
   border-radius: 50%;
@@ -328,6 +319,7 @@ h1, h2, h3, h4 {
   mix-blend-mode: plus-lighter;
   will-change: transform;
 }
+
 .glow-1 {
   width: 500px;
   height: 500px;
@@ -335,6 +327,7 @@ h1, h2, h3, h4 {
   top: -10%;
   left: 10%;
 }
+
 .glow-2 {
   width: 400px;
   height: 400px;
@@ -342,6 +335,7 @@ h1, h2, h3, h4 {
   bottom: 10%;
   right: 10%;
 }
+
 .glow-3 {
   width: 450px;
   height: 450px;
@@ -353,24 +347,43 @@ h1, h2, h3, h4 {
 .hero-effects-active .glow-1 {
   animation: floatBlob1 25s infinite alternate ease-in-out;
 }
+
 .hero-effects-active .glow-2 {
   animation: floatBlob2 20s infinite alternate ease-in-out;
 }
+
 .hero-effects-active .glow-3 {
   animation: floatBlob3 22s infinite alternate ease-in-out;
 }
 
 @keyframes floatBlob1 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(60px, 40px) scale(1.1); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(60px, 40px) scale(1.1);
+  }
 }
+
 @keyframes floatBlob2 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-50px, -60px) scale(1.05); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(-50px, -60px) scale(1.05);
+  }
 }
+
 @keyframes floatBlob3 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(40px, -30px) scale(0.95); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(40px, -30px) scale(0.95);
+  }
 }
 
 .hero-bg-grid {
@@ -408,7 +421,6 @@ h1, h2, h3, h4 {
   contain: layout paint;
 }
 
-/* Layout Containers */
 .hero-container {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -434,7 +446,6 @@ h1, h2, h3, h4 {
   position: relative;
 }
 
-/* Typography & Copy */
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -454,6 +465,7 @@ h1, h2, h3, h4 {
   cursor: pointer;
   contain: layout paint;
 }
+
 .hero-badge:hover {
   border-color: var(--primary-light);
   box-shadow: 0 0 15px rgba(79, 70, 229, 0.2);
@@ -497,7 +509,6 @@ h1, h2, h3, h4 {
   text-shadow: none;
 }
 
-/* Button Systems */
 .hero-actions-new {
   display: flex;
   gap: 1rem;
@@ -583,7 +594,6 @@ h1, h2, h3, h4 {
   opacity: 1;
 }
 
-/* Trust Indicators */
 .hero-trust {
   display: flex;
   flex-wrap: wrap;
@@ -617,7 +627,6 @@ h1, h2, h3, h4 {
   font-weight: bold;
 }
 
-/* Dashboard Mockup Layout */
 .dashboard-tilt-container {
   width: 100%;
   max-width: 580px;
@@ -662,9 +671,18 @@ h1, h2, h3, h4 {
   height: 9px;
   border-radius: 50%;
 }
-.dot-close { background: #ef4444; }
-.dot-minimize { background: #f59e0b; }
-.dot-maximize { background: #10b981; }
+
+.dot-close {
+  background: #ef4444;
+}
+
+.dot-minimize {
+  background: #f59e0b;
+}
+
+.dot-maximize {
+  background: #10b981;
+}
 
 .mockup-address {
   display: flex;
@@ -717,6 +735,7 @@ h1, h2, h3, h4 {
   transition: opacity 0.3s;
   padding: 0.25rem;
 }
+
 .menu-item.active {
   opacity: 1;
   color: var(--primary-light);
@@ -784,41 +803,47 @@ h1, h2, h3, h4 {
   color: var(--hero-text-muted);
 }
 
-/* Card Styles */
 .progress-card {
   grid-column: span 3;
 }
+
 .progress-details {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
 }
+
 .circular-progress {
   width: 50px;
   height: 50px;
   aspect-ratio: 1 / 1;
 }
+
 .circular-chart {
   display: block;
   margin: 0 auto;
   max-width: 100%;
   max-height: 100%;
 }
+
 .circle-bg {
   fill: none;
   stroke: rgba(255, 255, 255, 0.06);
   stroke-width: 3.5;
 }
+
 [data-theme="light"] .circle-bg {
   stroke: rgba(0, 0, 0, 0.06);
 }
+
 .circle-fill {
   fill: none;
   stroke: var(--primary);
   stroke-width: 3.5;
   stroke-linecap: round;
 }
+
 .circle-percentage {
   fill: var(--hero-text);
   font-family: sans-serif;
@@ -832,10 +857,12 @@ h1, h2, h3, h4 {
   height: 30px;
   aspect-ratio: 10 / 3;
 }
+
 .sparkline {
   width: 100%;
   height: 100%;
 }
+
 .sparkline path {
   stroke: var(--secondary);
   stroke-linecap: round;
@@ -845,6 +872,7 @@ h1, h2, h3, h4 {
 .activity-card {
   grid-column: span 3;
 }
+
 .activity-bars {
   display: flex;
   justify-content: space-between;
@@ -852,6 +880,7 @@ h1, h2, h3, h4 {
   height: 52px;
   padding-top: 5px;
 }
+
 .bar-col {
   display: flex;
   flex-direction: column;
@@ -859,12 +888,14 @@ h1, h2, h3, h4 {
   gap: 0.25rem;
   width: 10%;
 }
+
 .bar-val {
   width: 100%;
   background: linear-gradient(to top, var(--primary), var(--primary-light));
   border-radius: 2px 2px 0 0;
   min-height: 2px;
 }
+
 .bar-label {
   font-size: 0.55rem;
   font-weight: 600;
@@ -874,16 +905,19 @@ h1, h2, h3, h4 {
 .subjects-card {
   grid-column: span 3;
 }
+
 .subjects-progress {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
 }
+
 .subject-row {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
 }
+
 .subject-meta {
   display: flex;
   justify-content: space-between;
@@ -891,9 +925,11 @@ h1, h2, h3, h4 {
   font-weight: 600;
   color: var(--hero-text);
 }
+
 .subject-meta .val-txt {
   color: var(--primary-light);
 }
+
 .progress-bar {
   width: 100%;
   height: 4px;
@@ -901,15 +937,11 @@ h1, h2, h3, h4 {
   border-radius: 2px;
   overflow: hidden;
 }
+
 [data-theme="light"] .progress-bar {
   background: rgba(0, 0, 0, 0.05);
 }
 
-/* Progress fill: GPU-accelerated scaleX() instead of width animation.
-   Track is always full width; the visual "fill" is a horizontal scale
-   transform anchored to the left edge, which only triggers compositing,
-   not layout/paint. Per-subject target percentages are applied via the
-   nth-child rules below (activated by .reveal-active on scroll-into-view). */
 .progress-fill {
   width: 100%;
   height: 100%;
@@ -920,20 +952,58 @@ h1, h2, h3, h4 {
   will-change: transform;
 }
 
-@keyframes fillJavaScale { from { transform: scaleX(0); } to { transform: scaleX(0.85); } }
-@keyframes fillDBMSScale { from { transform: scaleX(0); } to { transform: scaleX(0.70); } }
-@keyframes fillOSScale   { from { transform: scaleX(0); } to { transform: scaleX(0.88); } }
-@keyframes fillCNScale   { from { transform: scaleX(0); } to { transform: scaleX(0.65); } }
+@keyframes fillJavaScale {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(0.85);
+  }
+}
+
+@keyframes fillDBMSScale {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(0.70);
+  }
+}
+
+@keyframes fillOSScale {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(0.88);
+  }
+}
+
+@keyframes fillCNScale {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(0.65);
+  }
+}
 
 .reveal-active .subjects-progress .subject-row:nth-child(1) .progress-fill {
   animation: fillJavaScale 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.3s;
 }
+
 .reveal-active .subjects-progress .subject-row:nth-child(2) .progress-fill {
   animation: fillDBMSScale 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
 }
+
 .reveal-active .subjects-progress .subject-row:nth-child(3) .progress-fill {
   animation: fillOSScale 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.5s;
 }
+
 .reveal-active .subjects-progress .subject-row:nth-child(4) .progress-fill {
   animation: fillCNScale 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.6s;
 }
@@ -941,6 +1011,7 @@ h1, h2, h3, h4 {
 .stats-card {
   grid-column: span 3;
 }
+
 .stats-mini-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -948,18 +1019,22 @@ h1, h2, h3, h4 {
   text-align: center;
   padding-top: 0.25rem;
 }
+
 .stat-mini-box {
   display: flex;
   flex-direction: column;
 }
+
 .stat-num {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--hero-text);
 }
+
 .stat-num.color-success {
   color: var(--success);
 }
+
 .stat-lbl {
   font-size: 0.6rem;
   color: var(--hero-text-muted);
@@ -968,23 +1043,28 @@ h1, h2, h3, h4 {
 .achievement-card {
   grid-column: span 3;
 }
+
 .achievement-content {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
+
 .badge-emoji {
   font-size: 1.5rem;
 }
+
 .achievement-details {
   display: flex;
   flex-direction: column;
 }
+
 .badge-title {
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--hero-text);
 }
+
 .badge-desc {
   font-size: 0.55rem;
   color: var(--hero-text-muted);
@@ -993,23 +1073,28 @@ h1, h2, h3, h4 {
 .notes-card {
   grid-column: span 3;
 }
+
 .notes-content {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
+
 .notes-icon {
   font-size: 1.5rem;
 }
+
 .notes-details {
   display: flex;
   flex-direction: column;
 }
+
 .notes-count {
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--hero-text);
 }
+
 .notes-status {
   font-size: 0.55rem;
   color: var(--hero-text-muted);
@@ -1018,11 +1103,13 @@ h1, h2, h3, h4 {
 .leaderboard-card {
   grid-column: span 6;
 }
+
 .leaderboard-mini-list {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
 }
+
 .leaderboard-row {
   display: flex;
   align-items: center;
@@ -1032,6 +1119,7 @@ h1, h2, h3, h4 {
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
 }
+
 .leaderboard-row .rank {
   font-weight: 700;
   width: 14px;
@@ -1042,9 +1130,21 @@ h1, h2, h3, h4 {
   display: inline-block;
   font-size: 0.6rem;
 }
-.rank-1 { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
-.rank-2 { background: rgba(148, 163, 184, 0.2); color: #94a3b8; }
-.rank-3 { background: rgba(180, 83, 9, 0.2); color: #b45309; }
+
+.rank-1 {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.rank-2 {
+  background: rgba(148, 163, 184, 0.2);
+  color: #94a3b8;
+}
+
+.rank-3 {
+  background: rgba(180, 83, 9, 0.2);
+  color: #b45309;
+}
 
 .leaderboard-row .name {
   font-weight: 600;
@@ -1052,12 +1152,12 @@ h1, h2, h3, h4 {
   margin-left: 0.5rem;
   color: var(--hero-text);
 }
+
 .leaderboard-row .score {
   font-weight: 700;
   color: var(--primary-light);
 }
 
-/* Floating Statistic Cards */
 .floating-card {
   position: absolute;
   display: inline-flex;
@@ -1112,14 +1212,17 @@ h1, h2, h3, h4 {
   top: 10%;
   left: -15%;
 }
+
 .float-rank {
   bottom: 15%;
   left: -10%;
 }
+
 .float-progress {
   top: 5%;
   right: -12%;
 }
+
 .float-complete {
   bottom: 10%;
   right: -15%;
@@ -1128,34 +1231,59 @@ h1, h2, h3, h4 {
 .hero-effects-active .float-streak {
   animation: floatStreak 6s infinite ease-in-out alternate;
 }
+
 .hero-effects-active .float-rank {
   animation: floatRank 7s infinite ease-in-out alternate;
 }
+
 .hero-effects-active .float-progress {
   animation: floatProgress 8s infinite ease-in-out alternate;
 }
+
 .hero-effects-active .float-complete {
   animation: floatComplete 6.5s infinite ease-in-out alternate;
 }
 
 @keyframes floatStreak {
-  0% { transform: translateY(0) rotate(-1deg); }
-  100% { transform: translateY(-12px) rotate(1deg); }
-}
-@keyframes floatRank {
-  0% { transform: translateY(0) rotate(1deg); }
-  100% { transform: translateY(12px) rotate(-1deg); }
-}
-@keyframes floatProgress {
-  0% { transform: translateY(0) rotate(0deg); }
-  100% { transform: translateY(-15px) rotate(1.5deg); }
-}
-@keyframes floatComplete {
-  0% { transform: translateY(0) rotate(-1.5deg); }
-  100% { transform: translateY(15px) rotate(0.5deg); }
+  0% {
+    transform: translateY(0) rotate(-1deg);
+  }
+
+  100% {
+    transform: translateY(-12px) rotate(1deg);
+  }
 }
 
-/* Entrance Animations & Scroll Reveal */
+@keyframes floatRank {
+  0% {
+    transform: translateY(0) rotate(1deg);
+  }
+
+  100% {
+    transform: translateY(12px) rotate(-1deg);
+  }
+}
+
+@keyframes floatProgress {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-15px) rotate(1.5deg);
+  }
+}
+
+@keyframes floatComplete {
+  0% {
+    transform: translateY(0) rotate(-1.5deg);
+  }
+
+  100% {
+    transform: translateY(15px) rotate(0.5deg);
+  }
+}
+
 .reveal-element {
   opacity: 0;
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1179,25 +1307,41 @@ h1, h2, h3, h4 {
   animation: fadeUpItem 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.reveal-active .reveal-item:nth-child(1) { animation-delay: 0.1s; }
-.reveal-active .reveal-item:nth-child(2) { animation-delay: 0.2s; }
-.reveal-active .reveal-item:nth-child(3) { animation-delay: 0.3s; }
-.reveal-active .reveal-item:nth-child(4) { animation-delay: 0.4s; }
-.reveal-active .reveal-item:nth-child(5) { animation-delay: 0.5s; }
+.reveal-active .reveal-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.reveal-active .reveal-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.reveal-active .reveal-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.reveal-active .reveal-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.reveal-active .reveal-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
 
 @keyframes fadeUpItem {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Accessibility overrides for prefers-reduced-motion */
-@media (prefers-reduced-motion: reduce), .reduced-motion {
+@media (prefers-reduced-motion:reduce),
+.reduced-motion {
+
   .glow-blob,
   .floating-card,
   .btn-premium-secondary:hover .btn-border-glow,
@@ -1224,22 +1368,48 @@ h1, h2, h3, h4 {
     transform: none !important;
   }
 
-  .float-streak { top: 10%; left: -5%; }
-  .float-rank { bottom: 15%; left: -5%; }
-  .float-progress { top: 5%; right: -5%; }
-  .float-complete { bottom: 10%; right: -5%; }
+  .float-streak {
+    top: 10%;
+    left: -5%;
+  }
+
+  .float-rank {
+    bottom: 15%;
+    left: -5%;
+  }
+
+  .float-progress {
+    top: 5%;
+    right: -5%;
+  }
+
+  .float-complete {
+    bottom: 10%;
+    right: -5%;
+  }
 
   .progress-fill {
     animation: none !important;
   }
-  .subjects-progress .subject-row:nth-child(1) .progress-fill { transform: scaleX(0.85) !important; }
-  .subjects-progress .subject-row:nth-child(2) .progress-fill { transform: scaleX(0.70) !important; }
-  .subjects-progress .subject-row:nth-child(3) .progress-fill { transform: scaleX(0.88) !important; }
-  .subjects-progress .subject-row:nth-child(4) .progress-fill { transform: scaleX(0.65) !important; }
+
+  .subjects-progress .subject-row:nth-child(1) .progress-fill {
+    transform: scaleX(0.85) !important;
+  }
+
+  .subjects-progress .subject-row:nth-child(2) .progress-fill {
+    transform: scaleX(0.70) !important;
+  }
+
+  .subjects-progress .subject-row:nth-child(3) .progress-fill {
+    transform: scaleX(0.88) !important;
+  }
+
+  .subjects-progress .subject-row:nth-child(4) .progress-fill {
+    transform: scaleX(0.65) !important;
+  }
 }
 
-/* Responsive adjustments for Premium Hero */
-@media (max-width: 1024px) {
+@media (max-width:1024px) {
   .hero-container {
     grid-template-columns: 1fr;
     gap: 3.5rem;
@@ -1273,13 +1443,24 @@ h1, h2, h3, h4 {
     margin: 0 auto;
   }
 
-  .float-streak { left: -10%; }
-  .float-rank { left: -5%; }
-  .float-progress { right: -8%; }
-  .float-complete { right: -10%; }
+  .float-streak {
+    left: -10%;
+  }
+
+  .float-rank {
+    left: -5%;
+  }
+
+  .float-progress {
+    right: -8%;
+  }
+
+  .float-complete {
+    right: -10%;
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
   .hero {
     padding: calc(var(--nav-height) + 3rem) 1rem 4rem;
   }
@@ -1292,10 +1473,25 @@ h1, h2, h3, h4 {
     padding: 0.4rem 0.6rem;
   }
 
-  .float-streak { left: -5%; top: 5%; }
-  .float-rank { left: -2%; bottom: 10%; }
-  .float-progress { right: -5%; top: 2%; }
-  .float-complete { right: -5%; bottom: 8%; }
+  .float-streak {
+    left: -5%;
+    top: 5%;
+  }
+
+  .float-rank {
+    left: -2%;
+    bottom: 10%;
+  }
+
+  .float-progress {
+    right: -5%;
+    top: 2%;
+  }
+
+  .float-complete {
+    right: -5%;
+    bottom: 8%;
+  }
 
   .glow-blob {
     animation: none !important;
@@ -1311,7 +1507,7 @@ h1, h2, h3, h4 {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width:480px) {
   .hero-title {
     font-size: 1.85rem;
   }
@@ -1366,8 +1562,6 @@ h1, h2, h3, h4 {
   }
 }
 
-/* ==================== Focus-visible States (Accessibility) ==================== */
-
 a:focus-visible,
 button:focus-visible,
 .btn-premium:focus-visible,
@@ -1379,18 +1573,16 @@ button:focus-visible,
   border-radius: 6px;
 }
 
-.hero :focus-visible {
+.hero:focus-visible {
   outline: 2px solid #ffffff;
   outline-offset: 3px;
   box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.35);
 }
 
-[data-theme="light"] .hero :focus-visible,
-:root:not([data-theme="dark"]) .hero :focus-visible {
+[data-theme="light"] .hero:focus-visible,
+:root:not([data-theme="dark"]) .hero:focus-visible {
   outline: 2px solid var(--primary-dark);
 }
-
-/* ==================== Features Section ==================== */
 
 .features {
   padding: 5rem 1.5rem;
@@ -1437,8 +1629,6 @@ button:focus-visible,
   font-size: 0.95rem;
 }
 
-/* ==================== Statistics Section ==================== */
-
 .stats {
   padding: 4rem 1.5rem;
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
@@ -1467,8 +1657,6 @@ button:focus-visible,
   opacity: 0.9;
 }
 
-/* ==================== About Section ==================== */
-
 .about {
   padding: 5rem 1.5rem;
 }
@@ -1484,8 +1672,6 @@ button:focus-visible,
   font-size: 1.1rem;
   line-height: 1.8;
 }
-
-/* ==================== Footer ==================== */
 
 .footer {
   background: var(--bg-card);
@@ -1533,8 +1719,6 @@ button:focus-visible,
   font-size: 0.9rem;
 }
 
-/* ==================== Form Messages ==================== */
-
 .form-message {
   padding: 0.75rem 1rem;
   border-radius: var(--radius-sm);
@@ -1562,8 +1746,6 @@ button:focus-visible,
   display: none;
 }
 
-/* ==================== Empty State ==================== */
-
 .empty-state {
   text-align: center;
   padding: 3rem 1.5rem;
@@ -1573,8 +1755,6 @@ button:focus-visible,
 .empty-state .btn {
   margin-top: 1rem;
 }
-
-/* ==================== Modal ==================== */
 
 .modal-overlay {
   position: fixed;
@@ -1633,22 +1813,19 @@ button:focus-visible,
   margin-top: 1.5rem;
 }
 
-/* ==================== Animations ==================== */
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* ==================== Responsive ==================== */
-
-@media (max-width: 1024px) {
+@media (max-width:1024px) {
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1667,7 +1844,7 @@ button:focus-visible,
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
   .nav-toggle {
     display: flex;
   }
@@ -1721,7 +1898,7 @@ button:focus-visible,
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width:480px) {
   .hero-content h1 {
     font-size: 2rem;
   }
@@ -1731,9 +1908,8 @@ button:focus-visible,
   }
 }
 
-/* ==================== Mobile SEO Fixes (legible text + tap targets) ====================
-   Scoped to small viewports only — desktop typography/sizing is untouched. */
-@media (max-width: 768px) {
+@media (max-width:768px) {
+
   .badge-desc,
   .notes-status,
   .bar-label,
@@ -1743,15 +1919,14 @@ button:focus-visible,
   .mockup-address,
   .date-badge,
   .card-title {
-    font-size: 0.75rem; /* 12px floor for Lighthouse legibility audit */
+    font-size: 0.75rem;
   }
 
-  /* Expand tap target to 48x48 via invisible padding instead of resizing
-     the visible button (keeps the premium pill look identical). */
   .dark-mode-toggle,
   .nav-toggle {
     position: relative;
   }
+
   .dark-mode-toggle::after,
   .nav-toggle::after {
     content: '';
