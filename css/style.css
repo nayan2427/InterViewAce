@@ -39,6 +39,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -48,6 +49,7 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   transition: background 0.3s, color 0.3s;
+  overflow-x: hidden;
 }
 
 img {
@@ -583,6 +585,7 @@ h4 {
   padding: 1px;
   background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -1339,9 +1342,75 @@ h4 {
   }
 }
 
-@media (prefers-reduced-motion:reduce),
-.reduced-motion {
+@media (prefers-reduced-motion: reduce) {
+  .glow-blob,
+  .floating-card,
+  .btn-premium-secondary:hover .btn-border-glow,
+  .circle-fill,
+  .progress-fill {
+    animation: none !important;
+    transition: none !important;
+  }
 
+  .reveal-element,
+  .reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .dashboard-tilt-container {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .floating-card {
+    position: absolute;
+    transform: none !important;
+  }
+
+  .float-streak {
+    top: 10%;
+    left: -5%;
+  }
+
+  .float-rank {
+    bottom: 15%;
+    left: -5%;
+  }
+
+  .float-progress {
+    top: 5%;
+    right: -5%;
+  }
+
+  .float-complete {
+    bottom: 10%;
+    right: -5%;
+  }
+
+  .progress-fill {
+    animation: none !important;
+  }
+
+  .subjects-progress .subject-row:nth-child(1) .progress-fill {
+    transform: scaleX(0.85) !important;
+  }
+
+  .subjects-progress .subject-row:nth-child(2) .progress-fill {
+    transform: scaleX(0.70) !important;
+  }
+
+  .subjects-progress .subject-row:nth-child(3) .progress-fill {
+    transform: scaleX(0.88) !important;
+  }
+
+  .subjects-progress .subject-row:nth-child(4) .progress-fill {
+    transform: scaleX(0.65) !important;
+  }
+}
+
+.reduced-motion {
   .glow-blob,
   .floating-card,
   .btn-premium-secondary:hover .btn-border-glow,
@@ -1512,6 +1581,10 @@ h4 {
     font-size: 1.85rem;
   }
 
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
   .hero-actions-new {
     flex-direction: column;
     width: 100%;
@@ -1520,6 +1593,7 @@ h4 {
 
   .btn-premium {
     width: 100%;
+    white-space: nowrap;
   }
 
   .mockup-sidebar {
@@ -1559,6 +1633,134 @@ h4 {
     align-items: center;
     gap: 0.5rem;
     min-height: 0;
+  }
+
+  /* Bump small font sizes for readability */
+  .bar-label {
+    font-size: 0.7rem;
+  }
+
+  .stat-lbl {
+    font-size: 0.7rem;
+  }
+
+  .subject-meta {
+    font-size: 0.7rem;
+  }
+
+  .badge-desc,
+  .notes-status {
+    font-size: 0.7rem;
+  }
+
+  .card-title {
+    font-size: 0.7rem;
+  }
+
+  .circle-percentage {
+    font-size: 10px;
+  }
+
+  .leaderboard-row {
+    font-size: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+  }
+
+  .feature-card p {
+    font-size: 0.88rem;
+  }
+
+  .stat-item h3 {
+    font-size: 2.25rem;
+  }
+
+  .stat-item p {
+    font-size: 0.95rem;
+  }
+
+  .about p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width:360px) {
+  .hero {
+    padding: calc(var(--nav-height) + 2rem) 0.75rem 3rem;
+  }
+
+  .hero-title {
+    font-size: 1.55rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.92rem;
+  }
+
+  .hero-badge {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .trust-chip {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .btn-premium {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.88rem;
+  }
+
+  .features {
+    padding: 3rem 1rem;
+  }
+
+  .stats {
+    padding: 3rem 1rem;
+  }
+
+  .about {
+    padding: 3rem 1rem;
+  }
+
+  .footer {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .navbar .container {
+    padding: 0 1rem;
+  }
+
+  .nav-brand {
+    font-size: 1.15rem;
+  }
+
+  .nav-brand img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .section-title {
+    font-size: 1.35rem;
   }
 }
 

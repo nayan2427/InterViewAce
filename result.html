@@ -82,6 +82,9 @@
     </main>
   </div>
 
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
   <script src="js/auth.js"></script>
   <script src="js/dashboard.js"></script>
   <script>
@@ -90,6 +93,33 @@
       const pct2 = document.getElementById('resultPercentage2');
       if (pct2) pct2.textContent = pct;
     });
+
+    // Sidebar toggle
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    function openSidebar() {
+      sidebar.classList.add('open');
+      sidebarOverlay.classList.add('active');
+      document.body.classList.add('sidebar-open');
+    }
+
+    function closeSidebar() {
+      sidebar.classList.remove('open');
+      sidebarOverlay.classList.remove('active');
+      document.body.classList.remove('sidebar-open');
+    }
+
+    sidebarToggle.addEventListener('click', () => {
+      if (sidebar.classList.contains('open')) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    });
+
+    sidebarOverlay.addEventListener('click', closeSidebar);
   </script>
 </body>
 </html>

@@ -163,6 +163,7 @@
   </div>
 
   <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="js/auth.js"></script>
@@ -170,9 +171,31 @@
   <script src="js/dashboard.js"></script>
   <script src="js/analytics.js"></script>
   <script>
-    document.getElementById('sidebarToggle').addEventListener('click', () => {
-      document.getElementById('sidebar').classList.toggle('open');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    function openSidebar() {
+      sidebar.classList.add('open');
+      sidebarOverlay.classList.add('active');
+      document.body.classList.add('sidebar-open');
+    }
+
+    function closeSidebar() {
+      sidebar.classList.remove('open');
+      sidebarOverlay.classList.remove('active');
+      document.body.classList.remove('sidebar-open');
+    }
+
+    sidebarToggle.addEventListener('click', () => {
+      if (sidebar.classList.contains('open')) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
     });
+
+    sidebarOverlay.addEventListener('click', closeSidebar);
   </script>
 </body>
 </html>
