@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="InterviewAce - Master your interviews with MCQ practice, progress tracking, and performance analytics.">
   <title>InterviewAce - Interview Preparation Platform</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=1.0.1">
+  <link rel="preload" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/hankengrotesk/v12/ieVn2YZDLWuGJpnzaiwFXS9tYtpd59CxCis4.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&family=Inter:wght@400;500;600;700&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&family=Inter:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- Navigation -->
@@ -43,8 +47,9 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero" aria-labelledby="hero-heading">
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero" aria-labelledby="hero-heading">
     <!-- Premium Layered Background -->
     <div class="hero-bg-glows" aria-hidden="true">
       <div class="glow-blob glow-1"></div>
@@ -89,7 +94,7 @@
             <span class="btn-glow"></span>
             <span class="btn-text">Start Practicing</span>
           </a>
-          <a href="#features" class="btn-premium btn-premium-secondary" aria-label="Explore Platform Features">
+          <a href="#features" class="btn-premium btn-premium-secondary" aria-label="Explore Features">
             <span class="btn-border-glow"></span>
             <span class="btn-text">Explore Features</span>
           </a>
@@ -151,7 +156,7 @@
                       <span class="card-title">Progress Score</span>
                     </div>
                     <div class="progress-details">
-                      <div class="circular-progress" aria-label="Progress is 78%">
+                      <div class="circular-progress" role="img" aria-label="Progress is 78%">
                         <svg viewBox="0 0 36 36" class="circular-chart">
                           <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                           <path class="circle-fill" stroke-dasharray="78, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
@@ -371,6 +376,7 @@
       <p>InterviewAce is a comprehensive interview preparation platform designed for students and job seekers. Our curated question bank covers essential technical topics including Java, Database Management, SQL, Operating Systems, Computer Networks, and Aptitude. With built-in analytics, note-taking, and leaderboard features, we help you prepare smarter and perform better in your interviews.</p>
     </div>
   </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -387,14 +393,14 @@
           <p>Your trusted partner for interview preparation. Practice, track, and succeed.</p>
         </div>
         <div class="footer-links">
-          <h4>Quick Links</h4>
+          <h3>Quick Links</h3>
           <a href="#home">Home</a>
           <a href="#features">Features</a>
           <a href="login.html">Login</a>
           <a href="signup.html">Signup</a>
         </div>
         <div class="footer-links">
-          <h4>Categories</h4>
+          <h3>Categories</h3>
           <a href="#">Java</a>
           <a href="#">DBMS & SQL</a>
           <a href="#">Operating Systems</a>
@@ -407,7 +413,7 @@
     </div>
   </footer>
 
-  <script src="js/hero.js?v=1.0.1" defer></script>
-  <script src="js/auth.js"></script>
+  <script src="js/hero.js" defer></script>
+  <script src="js/auth.js" defer></script>
 </body>
 </html>
